@@ -9,6 +9,29 @@
 
 <body>
     <script type="text/javascript">
+        let promenna_s_funkci = function (jmeno) {
+            document.write("Ahoj, vřele tě tu vítám " + jmeno + "!");
+        }
+
+        function zavolej_funkci(funkce, jmeno) {
+            document.write("Jsem funkce a volám funkci, která mi přišla do parametru v proměnné.<br />");
+            document.write("Jako parametr jí dám jmeno, které mi přišlo jako 2. parametr.<br />");
+            funkce(jmeno);
+        }
+
+        zavolej_funkci(promenna_s_funkci, "Karle");
+
+        document.write("<BR>");
+        document.write("<BR>");
+        function f(a, b) {
+            document.write("a= " + a);
+            document.write(" b= " + b);
+        }
+
+        document.write("<BR>");
+        f(5);
+        document.write("<BR>");
+        f(1, 2);
 
     </script>
 </body>
