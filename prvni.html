@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 
 <html lang="cs-cz">
-    <head>
-        <meta charset="utf-8" />
-        <title>První webová aplikace v JavaScriptu</title>
-    </head>
 
-    <body>
-        <script type="text/javascript">
-           let d = new Date();
-            if (d.getHours() >= 18) {
-            document.writeln("Je po šesté hodině.");
-}
-        </script>
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title>První webová aplikace v JavaScriptu</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let neco = prompt("Zadej nějaké ovoce nebo zeleninu");
+        let ovoce = ["jablko", "hruška", "pomeranč", "banán", "hovno"];
+        let zelenina = ["mrkev", "celer", "petržel", "sračka"];
+        let jeOvoce = ovoce.indexOf(neco);
+        let jeZelenina = zelenina.indexOf(neco);
+        if (jeOvoce >= 0) {
+            document.write(neco + " je ovoce.");
+        } else
+            if (jeZelenina >= 0) {
+                document.write(neco + " je zelenina.");
+            }
+            else {
+                document.write("Jdi do prdele! " + neco + " neznám.");
+            }
+
+
+
+
+
+
+
+    </script>
+</body>
+
 </html>
