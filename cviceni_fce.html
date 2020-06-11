@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="cs-cz">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cvičení na fce</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let cisla = prompt("Zadej několik čísel oddělených čárkami.");
+        let poleCisel = cisla.split(",");
+        let mujText = prompt("Zadej text");
+        let delka = prompt("Zadej požadovanou délku");
+        let zkracenyText = "";
+
+        function vypisDatum() {
+            let mesice = ["Ledna", "Února", "Března", "Dubna", "Května", "Června", "Července", "Srpna", "Září", "Října", "Listopadu", "Prosince"];
+            let dnes = new Date();
+            return "Dnes je " + dnes.getDate() + ". " + mesice[dnes.getMonth() + 1] + " " + dnes.getFullYear() + ".";
+        }
+
+
+        function zkrat_text(ftext, delka) {
+            if (ftext.length > delka - 3) {
+                zkracenyText = ftext.slice(0, delka - 3) + "...";
+            } else {
+                zkracenyText = ftext;
+            }
+            return zkracenyText;
+        }
+
+        document.write(vypisDatum());
+        document.write("<BR> Zadaný text <BR> ");
+        document.write(mujText);
+        document.write("<BR> Zkrácený test <BR> ");
+        document.write(zkrat_text(mujText, delka));
+        document.write("<BR>");
+
+        document.write("<BR> zadal jsi čísla : <BR>");
+        for (let cislo of poleCisel) {
+            document.write(cislo + "<BR>");
+        }
+
+        document.write("<BR> Seřazené : <BR>");
+        poleCisel.sort(function (a, b) { return a - b });
+        for (let cislo of poleCisel) {
+            document.write(cislo + "<BR>");
+        }
+        document.write("<BR> Seřazené obráceně :  <BR>");
+        poleCisel.reverse();
+        for (let cislo of poleCisel) {
+            document.write(cislo + "<BR>");
+        }
+        document.write("<BR> Součet tří největších je : <BR>");
+        document.write(parseInt(poleCisel[0]) + parseInt(poleCisel[1]) + parseInt(poleCisel[2]) + "<BR>");
+
+
+
+
+    </script>
+</body>
+
+</html>
